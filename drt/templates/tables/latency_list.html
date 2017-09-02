@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="container-table">
+<table class="table table-bordered" id="table">
+
+</table>
+</div>
+
+{% endblock content %}
+
+<table class="table table-bordered">
+	<tr>
+	<td style="background-color: red"></td>                
+	{% for key, value in matrix.items %}
+	<td>{{ key }}</td>
+	{% endfor %}
+
+	</tr>
+
+
+	{% for key, value in matrix.items %} 		
+	<tr>
+
+	<td>{{ key }}</td>
+	
+	{% for k, v in value.items %}
+	
+	{% if k == key %}
+	<td style="background-color: red"></td>
+	{% else %}
+	<td>{{ v }}</td>
+	{% endif %}
+
+	{% endfor %}
+	
+	</tr>
+	{% endfor %}
+</table>
